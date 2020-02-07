@@ -1,0 +1,28 @@
+.plyr--full-ui input[type=range] {
+color: #dd8a17;
+}
+
+.plyr__control--overlaid {
+background: rgba(221, 138, 23, 0.5);
+-webkit-backdrop-filter: blur(8px);
+backdrop-filter: blur(8px);
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true] {
+background: #dd8a17;
+}
+
+.plyr__control.plyr__tab-focus {
+box-shadow: 0 0 0 5px rgba(221, 138, 23, 0.5);
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+background: #dd8a17;
+}
+.plyr--audio .plyr__control.plyr__tab-focus,
+.plyr--audio .plyr__control:hover,
+.plyr--audio .plyr__control[aria-expanded=true] {
+background: #dd8a17;
+}
