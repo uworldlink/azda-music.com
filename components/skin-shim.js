@@ -11,9 +11,9 @@ function loadCSS(ref) {
   head.appendChild(link);
   }
 }
-var auto_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/web/azda%20website/css/default.min.css';
-var light_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/web/azda%20website/css/light-theme.min.css';
-var dark_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/web/azda%20website/css/dark-theme.min.css';
+var auto_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/default.min.css';
+var light_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/light-theme.min.css';
+var dark_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/dark-theme.min.css';
 
 if ((localStorage.getItem('themeSwitch') === null || localStorage.getItem('themeSwitch') == 0)) {
   loadCSS(auto_theme);
