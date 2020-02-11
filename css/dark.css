@@ -1,0 +1,23 @@
+:root {
+		--main-color: #151515;
+		--main-aero-color: rgba(21, 21, 21, 0.9);
+		--main-menu-color: #ecebeb; /* unused */
+		--main-aero-menu-color: rgba(236, 235, 235, 0.15);
+		--main-modal-color: rgba(21, 21, 21, 0.9); /* unused */
+		--main-aero-modal-color: rgba(21, 21, 21, 0.35);
+		--main-bg-color: #121212;
+		--main-aero-bg-color: rgba(21, 21, 21, 0.35);
+		--main-bg-color-2: #1d1d1d;
+		--main-header-color: #3f414b; /*test 2c2c2c*/
+		--main-text-color: #e4e4e4;
+		--main-text-color-2: #e4e4e4;
+		--main-select-color: #d89c1b;
+		--main-svg-color: invert(100);
+		--main-svg-color-2: invert(100);
+		
+		--player-bg-color: #26262d;
+		--player-bg-color-2: #2f3038;
+		--player-selection-color: #d89c1b;
+		--player-item-hover-color: #3f414b;
+		--player-item-text-color: #ddd;
+	}
