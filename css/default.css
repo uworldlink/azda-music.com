@@ -17,10 +17,10 @@
 		--main-select-color: #dd8a17;
 
 		--player-bg-color: #fff;
-  	--player-bg-color-2: #f3f5f7;
-  	--player-selection-color: #dd8a17;
-  	--player-item-hover-color: #dedfe0;
-  	--player-item-text-color: #090f25;
+		--player-bg-color-2: #f3f5f7;
+		--player-selection-color: #dd8a17;
+		--player-item-hover-color: #dedfe0;
+		--player-item-text-color: #090f25;
 	}
 }
 
@@ -41,11 +41,11 @@
 		--main-select-color: #d89c1b;
 		--main-svg-color: invert(100);
 		--main-svg-color-2: invert(100);
-
-	  --player-bg-color: #26262d;
-	  --player-bg-color-2: #2f3038;
-	  --player-selection-color: #d89c1b;
-	  --player-item-hover-color: #3f414b;
-	  --player-item-text-color: #ddd;
+		
+		--player-bg-color: #26262d;
+		--player-bg-color-2: #2f3038;
+		--player-selection-color: #d89c1b;
+		--player-item-hover-color: #3f414b;
+		--player-item-text-color: #ddd;
 	}
 }
