@@ -20,3 +20,4 @@ function theme_detect {
   }
   document.documentElement.setAttribute("data-theme", theme);
 }
+theme_detect();
