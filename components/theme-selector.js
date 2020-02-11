@@ -9,7 +9,7 @@ function themeSelect(state) {
 	var mode_1 = document.getElementById("theme-1");
 	var mode_2 = document.getElementById("theme-2");
 	
-  if ((state === null || state == "auto")) {
+  if (state == "auto") {
     current.style.backgroundImage=auto_icon;
     mode_1.style.backgroundImage=light_icon;
     mode_2.style.backgroundImage=dark_icon;
