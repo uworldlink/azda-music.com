@@ -15,8 +15,8 @@ function themeSelect(state) {
     mode_2.style.backgroundImage=dark_icon;
     $('.theme-text-1').text("Light");
     $('.theme-text-2').text("Dark");
-    $('.theme-1-mode').attr("whenClick", "setMode('auto')");
-    $('.theme-2-mode').attr("whenClick", "setMode('dark')");
+    $('.theme-1-mode').attr("whenClick", "setMode("auto")");
+    $('.theme-2-mode').attr("whenClick", "setMode("dark")");
   } 
   else if (state == "light") {
     current.style.backgroundImage=light_icon;
@@ -24,8 +24,8 @@ function themeSelect(state) {
     mode_2.style.backgroundImage=auto_icon;
     $('.theme-text-1').text("Dark");
     $('.theme-text-2').text("Auto");
-    $('.theme-1-mode').attr("whenClick", "setMode('light')");
-    $('.theme-2-mode').attr("whenClick", "setMode('auto')");
+    $('.theme-1-mode').attr("whenClick", "setMode("light")");
+    $('.theme-2-mode').attr("whenClick", "setMode("auto")");
   }
   else if (state == "dark") {
     current.style.backgroundImage=dark_icon;
@@ -33,8 +33,8 @@ function themeSelect(state) {
     mode_2.style.backgroundImage=auto_icon;
     $('.theme-text-1').text("Light");
     $('.theme-text-2').text("Auto");
-    $('.theme-1-mode').attr("whenClick", "setMode('light')");
-    $('.theme-2-mode').attr("whenClick", "setMode('auto')");
+    $('.theme-1-mode').attr("whenClick", "setMode("light")");
+    $('.theme-2-mode').attr("whenClick", "setMode("auto")");
   }
 }
 
