@@ -6,35 +6,35 @@ function themeSelect(state) {
 	var light_icon = "url(https://uploads-ssl.webflow.com/5cb8748fb2c690ee31a27874/5e25d924bfb39b331cd06007_sun.svg)";
 	var dark_icon = "url(https://uploads-ssl.webflow.com/5cb8748fb2c690ee31a27874/5e25d995e8d47e509e9e452e_moon.svg)";
 	var current = document.getElementById("current-mode");
-	var theme_1 = document.getElementById("theme-1");
-	var theme_2 = document.getElementById("theme-2");
+	var mode_1 = document.getElementById("theme-1");
+	var mode_2 = document.getElementById("theme-2");
 	
-  if (state == 0) {
+  if ((state === null || state == "auto")) {
     current.style.backgroundImage=auto_icon;
-    theme_1.style.backgroundImage=light_icon;
-    theme_2.style.backgroundImage=dark_icon;
+    mode_1.style.backgroundImage=light_icon;
+    mode_2.style.backgroundImage=dark_icon;
     $('.theme-text-1').text("Light");
     $('.theme-text-2').text("Dark");
-    $('.theme-1-mode').attr("whenClick", "setMode('1')");
-    $('.theme-2-mode').attr("whenClick", "setMode('2')");
+    $('.theme-1-mode').attr("whenClick", "setMode('auto')");
+    $('.theme-2-mode').attr("whenClick", "setMode('dark')");
   } 
-  else if (state == 1) {
+  else if (state == "light") {
     current.style.backgroundImage=light_icon;
-    theme_1.style.backgroundImage=dark_icon;
-    theme_2.style.backgroundImage=auto_icon;
+    mode_1.style.backgroundImage=dark_icon;
+    mode_2.style.backgroundImage=auto_icon;
     $('.theme-text-1').text("Dark");
     $('.theme-text-2').text("Auto");
-    $('.theme-1-mode').attr("whenClick", "setMode('2')");
-    $('.theme-2-mode').attr("whenClick", "setMode('0')");
+    $('.theme-1-mode').attr("whenClick", "setMode('light')");
+    $('.theme-2-mode').attr("whenClick", "setMode('auto')");
   }
-  else if (state == 2) {
+  else if (state == "dark") {
     current.style.backgroundImage=dark_icon;
-    theme_1.style.backgroundImage=light_icon;
-    theme_2.style.backgroundImage=auto_icon;
+    mode_1.style.backgroundImage=light_icon;
+    mode_2.style.backgroundImage=auto_icon;
     $('.theme-text-1').text("Light");
     $('.theme-text-2').text("Auto");
-    $('.theme-1-mode').attr("whenClick", "setMode('1')");
-    $('.theme-2-mode').attr("whenClick", "setMode('0')");
+    $('.theme-1-mode').attr("whenClick", "setMode('light')");
+    $('.theme-2-mode').attr("whenClick", "setMode('auto')");
   }
 }
 
@@ -57,15 +57,20 @@ function setMode(mode){
 	changeSkin(mode);
 }
 
-function changeSkin(set_skin){
-	if(set_skin == 0){
-		$('#skin').attr("href", auto_theme);
+function changeSkin(mode){
+	if(mode == "auto"){
+		var theme = "light";
+		if(!window.matchMedia) {
+			//matchMedia method not supported
+			return false;
+		} else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			//OS theme setting detected as dark
+			var theme = "dark";
+		}
 	}
-	if(set_skin == 1){
-		$('#skin').attr("href", light_theme);
+	else {
+		var theme = mode;
 	}
-	if(set_skin == 2){
-		$('#skin').attr("href", dark_theme);
-	}
-	themeSelect(set_skin);
+	document.documentElement.setAttribute("data-theme", theme);
+	themeSelect(mode);
 }
