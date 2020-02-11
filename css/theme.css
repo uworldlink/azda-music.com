@@ -1,0 +1,146 @@
+/* Custom UI */
+
+/* Glass effect support handler */
+
+@supports (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
+  .nav-bg, .dropdown-list {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+		background-color: var(--main-aero-color);
+  }
+  .navbar {
+    background-color: transparent;
+  }
+	.modal-bg {
+    -webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+  }
+	.modal {
+		background-color: var(--main-aero-modal-color);
+	}
+  .overlay-content, .backtotop-button, .page-content, .utility-page-form {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+		background-color: var(--main-aero-bg-color);
+		color: var(--main-text-color-2);
+  }
+  @media screen and (max-width: 991px){
+		.nav-menu {
+  		-webkit-backdrop-filter: blur(5px);
+			backdrop-filter: blur(5px);
+			background-color: var(--main-aero-color);
+    }
+    .dropdown-list {
+    	-webkit-backdrop-filter: blur(0px);
+    	backdrop-filter: blur(0px);
+			background-color: var(--main-aero-menu-color);
+  	}
+		.menu-selector.w--open {
+			background-color: var(--main-select-color);
+		}
+  }
+}
+
+/* fallback support - for browser not supporting backdrop-blur */
+@supports not (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
+	.navbar, .nav-bg {
+		background-color: var(--main-aero-color);
+	}
+	.dropdown-list {
+		background-color: var(--main-color);
+	}
+	.overlay-content, .backtotop-button, .page-content, .utility-page-form {
+		background-color: var(--main-aero-color);
+		color: var(--main-text-color-2);
+	}
+  .modal {
+		background-color: var(--main-aero-color);
+		color: var(--main-text-color);
+	}
+}
+
+/* Custom UI Theme */
+body {
+	background-color: var(--main-bg-color);
+	color: var(--main-text-color);
+}
+a {
+		color: var(--main-text-color);
+}
+.preloader {
+	background-color: var(--main-color);
+}
+.nav-overlay {
+	background-color: var(--main-color);
+}
+.footer {
+	background-color: var(--main-color);
+}
+.widget-icon, .icon {
+	filter: var(--main-svg-color);
+}
+.widget-icon:hover {
+	filter: var(--main-svg-color-2);
+}
+.brand, .page-button, .menu-selector, .dropdown-link, .button-selector, .tab-selector {
+	color: var(--main-text-color);
+}
+.button-selector.w--current, .tab-selector.w--current {
+	background-color: var(--main-select-color);
+}
+.page-button.w--current, .dropdown-link.w--current {
+	color: var(--main-select-color);
+}
+.contentsection2 {
+	background-color: var(--main-bg-color-2);
+}
+.banner-header {
+	background-color: var(--main-header-color);
+}
+.banner-wrapper, .content-wrapper {
+	background-color: var(--main-bg-color-2);
+}
+.product-card {
+	background-color: var(--main-bg-color-2); /* light - use to be #fafafa; */
+}
+.progress-bar, .header-line-color, .link-button, .button, .home-page-button {
+	background-color: var(--main-select-color);
+}
+.backtotop-button:hover, .widget-link:hover, .hero-button:hover {
+	background-color: var(--main-select-color);
+}
+.modal-open:hover, .about-link:hover, .close-icon:hover {
+	color: var(--main-select-color);
+}
+.media-title {
+	color: var(--main-select-color);
+}
+.square-wrapper:hover, .text-field:focus, .textarea:focus {
+	border-color: var(--main-select-color);
+}
+
+/* selection */
+::selection {
+  background: var(--main-select-color);
+  color: var(--main-text-color);
+}
+::-moz-selection {
+  background: var(--main-select-color);
+  color: var(--main-text-color);
+}
+
+/* user select */
+.navbar {
+  -webkit-user-select:none;
+}
+#modal-touch {
+  -webkit-user-select:none;
+}
+
+.hero-wrapper {
+	pointer-events: none;
+}
+
+#overlay, #modal {
+	-webkit-overflow-scrolling: touch;
+}
