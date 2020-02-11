@@ -11,19 +11,19 @@ function loadCSS(ref) {
   head.appendChild(link);
   }
 }
-var auto_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/default.min.css';
-var light_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/light-theme.min.css';
-var dark_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/dark-theme.min.css';
+var auto_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/default.css';
+var light_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/light.css';
+var dark_theme = 'https://cdn.jsdelivr.net/gh/uworldlink/azda-music.com/css/dark.css';
 
-if ((localStorage.getItem('themeSwitch') === null || localStorage.getItem('themeSwitch') == 0)) {
+if ((localStorage.getItem('theme') === null || localStorage.getItem('theme') == 0)) {
   loadCSS(auto_theme);
   var current_theme = '0';
 }
-else if (localStorage.getItem('themeSwitch') == 1) {
+else if (localStorage.getItem('theme') == 1) {
   loadCSS(light_theme);
   var current_theme = '1';
 }
-else if (localStorage.getItem('themeSwitch') == 2) {
+else if (localStorage.getItem('theme') == 2) {
   loadCSS(dark_theme);
   var current_theme = '2';
 }
