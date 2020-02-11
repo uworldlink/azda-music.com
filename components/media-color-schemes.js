@@ -1,4 +1,4 @@
-function theme_detect {
+function theme_detect() {
   if ((localStorage.getItem('theme') === null || localStorage.getItem('theme') == "auto")) {
     var theme = "light";
     if(!window.matchMedia) {
