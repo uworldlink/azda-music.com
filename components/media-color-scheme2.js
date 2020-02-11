@@ -2,7 +2,7 @@ if ((localStorage.getItem('theme') === null || localStorage.getItem('theme') == 
   var theme = "light";
   if(!window.matchMedia) {
     //matchMedia method not supported
-    return false;
+    return;
   } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
     //OS theme setting detected as dark
     var theme = "dark";
