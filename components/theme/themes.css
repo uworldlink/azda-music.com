@@ -14,6 +14,7 @@
 	--main-select-color: #d89c1b;
 	--main-svg-color: brightness(0.1) sepia(0) hue-rotate(0deg) saturate(0);
 	--main-svg-color-2: brightness(1) sepia(0) hue-rotate(0deg) saturate(0);
+	--main-svg-inv-color: invert(1);
 
 	--player-bg-color: #26262d;
 	--player-bg-color-2: #2f3038;
@@ -33,12 +34,13 @@
 	--main-bg-color: #f8f8f8;
 	--main-aero-bg-color: rgba(21, 21, 21, 0.35);
 	--main-bg-color-2: #cac8c8;
-	--main-header-color: #dedfe0; /* #bdbcbc; */
+	--main-header-color: #bdbcbc;
 	--main-text-color: #111111;
 	--main-text-color-2: #e4e4e4;
+	--main-select-color: #dd8a17;
 	--main-svg-color: brightness(0.1) sepia(0) hue-rotate(0deg) saturate(0);
 	--main-svg-color-2: brightness(1) sepia(0) hue-rotate(0deg) saturate(0);
-	--main-select-color: #dd8a17;
+	--main-svg-inv-color: none;
 
 	--player-bg-color: #fff;
 	--player-bg-color-2: #f3f5f7;
@@ -64,6 +66,7 @@
 	--main-select-color: #d89c1b;
 	--main-svg-color: brightness(1) sepia(0) hue-rotate(0deg) saturate(0);
 	--main-svg-color-2: brightness(1) sepia(0) hue-rotate(0deg) saturate(0);
+	--main-svg-inv-color: invert(1);
 
 	--player-bg-color: #26262d;
 	--player-bg-color-2: #2f3038;
@@ -149,6 +152,9 @@ a {
 .footer {
 	background-color: var(--main-color);
 }
+.theme-icon {
+	filter: var(--main-svg-inv-color);
+}
 .widget-icon, .icon {
 	filter: var(--main-svg-color);
 }
@@ -174,7 +180,7 @@ a {
 	background-color: var(--main-bg-color-2);
 }
 .product-card {
-	background-color: var(--main-bg-color-2); /* light - use to be #fafafa; */
+	background-color: var(--main-bg-color-2);
 }
 .progress-bar, .header-line-color, .link-button, .button, .home-page-button {
 	background-color: var(--main-select-color);
