@@ -122,8 +122,11 @@
 	.navbar, .nav-bg {
 		background-color: var(--main-aero-color);
 	}
-	.dropdown-list {
+	.nav-menu {
 		background-color: var(--main-color);
+	}
+	.dropdown-list {
+		background-color: var(--main-aero-menu-color);
 	}
 	.overlay-content, .backtotop-button, .page-content, .utility-page-form {
 		background-color: var(--main-aero-color);
