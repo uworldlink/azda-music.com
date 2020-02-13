@@ -78,7 +78,7 @@
 
 /* Glass effect support handler */
 
-@supports (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
+@supports ((backdrop-filter: none) or (-webkit-backdrop-filter: none)) {
   .nav-bg, .dropdown-list {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -118,7 +118,7 @@
 }
 
 /* fallback support - for browser not supporting backdrop-blur */
-@supports not (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
+@supports not ((backdrop-filter: none) or (-webkit-backdrop-filter: none)) {
 	.navbar, .nav-bg {
 		background-color: var(--main-aero-color);
 	}
