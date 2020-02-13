@@ -1,7 +1,7 @@
 :root {
 	--main-color: #151515;
 	--main-aero-color: rgba(21, 21, 21, 0.9);
-	--main-menu-color: #151515; /* unused */
+	--main-overlay-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-menu-color: rgba(236, 235, 235, 0.15);
 	--main-modal-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-modal-color: rgba(21, 21, 21, 0.35);
@@ -27,7 +27,7 @@
 [data-theme="light"] {
 	--main-color: #ecebeb;
 	--main-aero-color: rgba(236, 235, 235, 0.8);
-	--main-menu-color: #ecebeb; /* unused */
+	--main-overlay-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-menu-color: rgba(21, 21, 21, 0.15);
 	--main-modal-color: rgba(236, 235, 235, 0.95); /* fallback */
 	--main-aero-modal-color: rgba(236, 235, 235, 0.3);
@@ -53,7 +53,7 @@
 [data-theme="dark"] {
 	--main-color: #151515;
 	--main-aero-color: rgba(21, 21, 21, 0.9);
-	--main-menu-color: #151515; /* unused */
+	--main-overlay-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-menu-color: rgba(236, 235, 235, 0.15);
 	--main-modal-color: rgba(21, 21, 21, 0.9); /* fallback */
 	--main-aero-modal-color: rgba(21, 21, 21, 0.35);
@@ -129,7 +129,7 @@
 		background-color: var(--main-aero-menu-color);
 	}
 	.overlay-content, .backtotop-button, .page-content, .utility-page-form {
-		background-color: var(--main-aero-color);
+		background-color: var(--main-overlay-color);
 		color: var(--main-text-color-2);
 	}
   .modal {
