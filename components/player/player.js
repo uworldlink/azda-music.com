@@ -288,15 +288,12 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         var source = playlist[id];
         player.source = source;
         //player.play();
-
-        // hotfix (wait provider init)
-        if (source.sources[0].provider) {
-          setTimeout(function () {
+        setTimeout(function () {
             player.play();
           }, 2000);
-        } else {
-          player.play();
-        }
+
+        // hotfix (wait provider init)
+        
       });
     });
 
