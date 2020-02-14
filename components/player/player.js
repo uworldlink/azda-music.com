@@ -269,7 +269,8 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
     });
 
     player.on("ended", function () {
-      container.querySelector(".js-player__item--active").nextSibling.click();
+      var active = container.querySelector(".js-player__item--active");
+      active.nextSibling.click();
     });
 
     container.querySelectorAll(".js-player__playlist li").forEach(function (item) {
