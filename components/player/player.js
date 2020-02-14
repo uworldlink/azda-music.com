@@ -277,13 +277,13 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         var id = item.getAttribute("data-id");
         var source = playlist[id];
         player.source = source;
-        player.play();
+        //player.play();
 
         // hotfix (wait provider init)
         if (source.sources[0].provider) {
           setTimeout(function () {
-            //player.play();
-          }, 1000);
+            player.play();
+          }, 2000);
         } else {
           player.play();
         }
