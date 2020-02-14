@@ -289,11 +289,11 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         player.source = source;
         //player.play();
 
-        // youtube&vimeo hotfix (wait provider init)
+        // hotfix (wait provider init)
         if (source.sources[0].provider) {
           setTimeout(function () {
             player.play();
-          }, 1000);
+          }, 2000);
         } else {
           player.play();
         }
