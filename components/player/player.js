@@ -274,6 +274,19 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
 
     container.querySelectorAll(".js-player__playlist li").forEach(function (item) {
       item.addEventListener("click", function (event) {
+        var id = item.getAttribute("data-id");
+        var source = playlist[id];
+        player.source = source;
+        //player.play();
+
+        // hotfix (wait provider init)
+        if (source.sources[0].provider) {
+          setTimeout(function () {
+            player.play();
+          }, 1000);
+        } else {
+          player.play();
+        }
         container
           .querySelector(".js-player__item--active")
           .classList.remove("js-player__item--active");
@@ -284,16 +297,6 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         if (target === item) {
           item.classList.add("js-player__item--active");
         }
-        var id = item.getAttribute("data-id");
-        var source = playlist[id];
-        player.source = source;
-        //player.play();
-        setTimeout(function () {
-            player.play();
-          }, 3000);
-
-        // hotfix (wait provider init)
-        
       });
     });
 
