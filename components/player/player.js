@@ -290,7 +290,7 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         //player.play();
         setTimeout(function () {
             player.play();
-          }, 2000);
+          }, 3000);
 
         // hotfix (wait provider init)
         
