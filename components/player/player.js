@@ -268,7 +268,10 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
       }
     });
 
-    
+    player.on("ended", function () {
+      //container.querySelector(".js-player__item--active").nextSibling.click();
+      container.querySelector(".plyr__control js-player__control__next").click();
+    });
 
     container.querySelectorAll(".js-player__playlist li").forEach(function (item) {
       item.addEventListener("click", function (event) {
@@ -309,12 +312,6 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         active.nextSibling.click();
       }
     });
-    
-    player.on("ended", function () {
-      var active = container.querySelector(".js-player__item--active");
-      active.nextSibling.click();
-    });
-
     return player;
   }
 
