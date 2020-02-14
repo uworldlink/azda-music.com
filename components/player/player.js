@@ -293,7 +293,7 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         if (source.sources[0].provider) {
           setTimeout(function () {
             player.play();
-          }, 2000);
+          }, 1000);
         } else {
           player.play();
         }

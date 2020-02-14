@@ -1,6 +1,7 @@
 :root {
 	--main-color: #151515;
 	--main-aero-color: rgba(21, 21, 21, 0.9);
+	--main-fallback-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-overlay-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-menu-color: rgba(236, 235, 235, 0.15);
 	--main-modal-color: rgba(21, 21, 21, 0.95); /* fallback */
@@ -27,13 +28,14 @@
 [data-theme="light"] {
 	--main-color: #ecebeb;
 	--main-aero-color: rgba(236, 235, 235, 0.8);
+	--main-fallback-color: rgba(236, 235, 235, 0.95); /* fallback */
 	--main-overlay-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-menu-color: rgba(21, 21, 21, 0.15);
 	--main-modal-color: rgba(236, 235, 235, 0.95); /* fallback */
 	--main-aero-modal-color: rgba(236, 235, 235, 0.3);
 	--main-bg-color: #f8f8f8;
 	--main-aero-bg-color: rgba(21, 21, 21, 0.35);
-	--main-bg-color-2: #cac8c8;
+	--main-bg-color-2: #f3f5f7; /* #cac8c8; */
 	--main-header-color: #bdbcbc;
 	--main-text-color: #111111;
 	--main-text-color-2: #e4e4e4;
@@ -53,6 +55,7 @@
 [data-theme="dark"] {
 	--main-color: #151515;
 	--main-aero-color: rgba(21, 21, 21, 0.9);
+	--main-fallback-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-overlay-color: rgba(21, 21, 21, 0.95); /* fallback */
 	--main-aero-menu-color: rgba(236, 235, 235, 0.15);
 	--main-modal-color: rgba(21, 21, 21, 0.9); /* fallback */
@@ -101,40 +104,48 @@
 		color: var(--main-text-color-2);
   }
   @media screen and (max-width: 991px){
-		.nav-menu {
-  		-webkit-backdrop-filter: blur(5px);
-			backdrop-filter: blur(5px);
-			background-color: var(--main-aero-color);
-    }
-    .dropdown-list {
-    	-webkit-backdrop-filter: blur(0px);
-    	backdrop-filter: blur(0px);
-			background-color: var(--main-aero-menu-color);
-  	}
-		.menu-selector.w--open {
-			background-color: var(--main-select-color);
-		}
-  }
+	  .nav-menu {
+		  -webkit-backdrop-filter: blur(5px);
+		  backdrop-filter: blur(5px);
+		  background-color: var(--main-aero-color);
+	  }
+	  .dropdown-list {
+		  -webkit-backdrop-filter: blur(0px);
+		  backdrop-filter: blur(0px);
+		  background-color: var(--main-aero-menu-color);
+	  }
+	  .menu-selector.w--open {
+		  background-color: var(--main-select-color);
+	  }
+	}
 }
 
 /* fallback support - for browser not supporting backdrop-blur */
 @supports not ((backdrop-filter: none) or (-webkit-backdrop-filter: none)) {
-	.navbar, .nav-bg {
-		background-color: var(--main-aero-color);
-	}
-	.nav-menu {
-		background-color: var(--main-color);
+	.navbar {
+		background-color: var(--main-fallback-color);
 	}
 	.dropdown-list {
-		background-color: var(--main-aero-menu-color);
+		background-color: var(--main-fallback-color);
 	}
 	.overlay-content, .backtotop-button, .page-content, .utility-page-form {
 		background-color: var(--main-overlay-color);
 		color: var(--main-text-color-2);
 	}
-  .modal {
+	.modal {
 		background-color: var(--main-modal-color);
 		color: var(--main-text-color);
+	}
+	@media screen and (max-width: 991px){
+		.nav-menu {
+			background-color: var(--main-fallback-color);
+		}
+		.dropdown-list {
+			background-color: var(--main-aero-menu-color);
+		}
+		.menu-selector.w--open {
+			background-color: var(--main-select-color);
+		}
 	}
 }
 
