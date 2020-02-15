@@ -15,7 +15,7 @@
 
 /* 
  * Add-On
- * v.2.1.2
+ * v.2.1.4
  */
 
 function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
@@ -270,7 +270,11 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
     });
 
     player.on("ended", function () {
-      container.querySelector(".js-player__item--active").nextSibling.click();
+      //container.querySelector(".js-player__item--active").nextSibling.click();
+      if(!((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)))) {
+        // do non iOS stuff here
+        container.querySelector(".js-player__item--active").nextSibling.click();
+      }
     });
 
     container.querySelectorAll(".js-player__playlist li").forEach(function (item) {
@@ -278,18 +282,14 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         var id = item.getAttribute("data-id");
         var source = playlist[id];
         player.source = source;
-        player.muted = true;
-        //player.play();
 
         // hotfix (wait provider init)
         if (source.sources[0].provider) {
           setTimeout(function () {
             player.play();
-            player.muted = false;
           }, 1000);
         } else {
           player.play();
-          player.muted = false;
         }
         container
           .querySelector(".js-player__item--active")
