@@ -278,18 +278,18 @@ function JS_Player(_container, _js_PlayerOptions, _plyrOptions) {
         var id = item.getAttribute("data-id");
         var source = playlist[id];
         player.source = source;
-        player.muted = 1;
+        player.muted = true;
         //player.play();
 
         // hotfix (wait provider init)
         if (source.sources[0].provider) {
           setTimeout(function () {
             player.play();
-            //player.muted = 0;
+            player.muted = false;
           }, 1000);
         } else {
           player.play();
-          player.muted = 0;
+          player.muted = false;
         }
         container
           .querySelector(".js-player__item--active")
