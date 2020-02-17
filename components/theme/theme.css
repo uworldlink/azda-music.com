@@ -194,11 +194,11 @@ a {
 /* selection */
 ::selection {
   background: var(--main-select-color);
-  color: var(--main-text-color);
+  color: var(--main-text-color-2);
 }
 ::-moz-selection {
   background: var(--main-select-color);
-  color: var(--main-text-color);
+  color: var(--main-text-color-2);
 }
 
 /* user select */
