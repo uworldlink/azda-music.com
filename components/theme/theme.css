@@ -101,7 +101,7 @@
 
 /* fallback support - for browser not supporting backdrop-blur */
 @supports not ((backdrop-filter: none) or (-webkit-backdrop-filter: none)) {
-	.navbar {
+	.nav-bar {
 		background-color: var(--main-fallback-color);
 	}
 	.dropdown-list {
@@ -207,11 +207,7 @@ a {
 	-ms-user-select:none;
 	user-select:none;
 }
-.theme-icon, .theme-text-1, .theme-text-2 {
-  -webkit-user-select:none;
-	-ms-user-select:none;
-	user-select:none;
-}
+
 #modal-touch {
   -webkit-user-select:none;
 	-ms-user-select:none;
